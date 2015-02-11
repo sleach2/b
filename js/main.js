@@ -9,6 +9,8 @@ window.onload = function() {
         game.load.image('ground', 'assets/platform.png');
     }
     
+    var platforms;
+    var player;
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
