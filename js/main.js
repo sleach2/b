@@ -5,7 +5,7 @@ window.onload = function() {
 
     function preload() {
         game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet('cat1','assets/cat1.png', 100, 100);
+        game.load.spritesheet('cat1','assets/cat1.png', 50, 50);
         game.load.image('ground', 'assets/platform.png');
         game.load.image('sky', 'assets/sky.png');
     }
@@ -44,7 +44,7 @@ window.onload = function() {
              player.animations.play('right'); 
          }else{ 
              player.animations.stop(); 
-             player.frame = 0; 
+             player.frame = 2; 
          } 
          if (move.up.isDown && player.body.touching.down){ 
             player.body.velocity.y = -350; 
