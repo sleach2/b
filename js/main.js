@@ -15,7 +15,7 @@ window.onload = function() {
     var player;
     var move;
     var box;
-    var backbround;
+    var background;
 
     function create() {
         game.world.setBounds(-1000,-1000,2000,2000);
