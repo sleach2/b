@@ -5,13 +5,14 @@ window.onload = function() {
 
     function preload() {
         game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.image('kitten','assets/kitten.gif');
+        game.load.spritesheet('cat','assets/cat1.png', 100, 100);
         game.load.image('ground', 'assets/platform.png');
+        game.load.image('sky', 'assets/sky.png');
     }
     
     var platforms;
     var player;
-    
+
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         platforms = game.add.group(); 
@@ -19,7 +20,7 @@ window.onload = function() {
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
         ground.scale.setTo(2, 2); 
         ground.body.immovable = true; 
-        player = game.add.sprite(32, 32, 'dude');
+        player = game.add.sprite(32, game.world.height - 150, 'cat');
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.2;
         player.body.collideWorldBounds = true;
