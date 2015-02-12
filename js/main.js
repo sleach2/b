@@ -49,7 +49,7 @@ window.onload = function() {
         ledge.body.immovable = true;
         ledge = platforms.create(-130, 250, 'ground');
         ledge.body.immovable = true;
-        ledge = platforms.create(700, 20, 'ground');
+        ledge = platforms.create(700, 50, 'ground');
         ledge.body.immovable = true;
     }
     
@@ -70,5 +70,8 @@ window.onload = function() {
          if (move.up.isDown && player.body.touching.down){ 
             player.body.velocity.y = -350; 
         } 
+        if(game.physics.arcade.collide(player,box)){
+            game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        }
     }
 };
