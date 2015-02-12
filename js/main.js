@@ -31,7 +31,7 @@ window.onload = function() {
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 300;
-        player.body.collideWorldBounds = true;
+       // player.body.collideWorldBounds = true;
         player.animations.add('left',[0,1],10,true);
         player.animations.add('right',[3,4],10,true);
         move = game.input.keyboard.createCursorKeys();
@@ -55,6 +55,7 @@ window.onload = function() {
          if (move.up.isDown && player.body.touching.down){ 
             player.body.velocity.y = -350; 
         } 
+        if()
 
     }
 };
