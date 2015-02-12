@@ -44,7 +44,7 @@ window.onload = function() {
              player.animations.play('right'); 
          }else{ 
              player.animations.stop(); 
-             player.frame = 0; 
+             player.frame = 2; 
          } 
          if (move.up.isDown && player.body.touching.down){ 
             player.body.velocity.y = -350; 
