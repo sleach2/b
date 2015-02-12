@@ -43,6 +43,8 @@ window.onload = function() {
         game.camera.follow(player);
         var ledge = platforms.create(400, 400, 'ground');
         ledge.body.immovable = true;
+        ledge = platforms.create(100, 150, 'ground');
+        ledge.body.immovable = true;
     }
     
     function update() {
