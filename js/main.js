@@ -27,8 +27,8 @@ window.onload = function() {
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 300;
         player.body.collideWorldBounds = true;
-        player.animations.add('left',[3,4],10,true);
-        player.animations.add('right',[1,2],10,true);
+        player.animations.add('left',[6,8],10,true);
+        player.animations.add('right',[3,5],10,true);
         move = game.input.keyboard.createCursorKeys();
         //player.body.setSize(20, 32, 5, 16);
     }
