@@ -17,6 +17,7 @@ window.onload = function() {
     var box;
 
     function create() {
+        game.world.setBounds(-1000,-1000,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0,0,'sky');
         box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
@@ -31,7 +32,7 @@ window.onload = function() {
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 300;
-       // player.body.collideWorldBounds = true;
+        player.body.collideWorldBounds = true;
         player.animations.add('left',[0,1],10,true);
         player.animations.add('right',[3,4],10,true);
         move = game.input.keyboard.createCursorKeys();
