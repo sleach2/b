@@ -39,6 +39,7 @@ window.onload = function() {
         player.animations.add('right',[3,4],10,true);
         move = game.input.keyboard.createCursorKeys();
         //player.body.setSize(20, 32, 5, 16);
+        game.camera.follow(player);
     }
     
     function update() {
