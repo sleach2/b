@@ -41,6 +41,7 @@ window.onload = function() {
     
     function update() {
         game.physics.arcade.collide(player, platforms);
+        game.physics.arcade.collide(box, platforms);
         player.body.velocity.x = 0;
         if (move.left.isDown){ 
              player.body.velocity.x = -250; 
