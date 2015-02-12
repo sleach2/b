@@ -45,6 +45,8 @@ window.onload = function() {
         ledge.body.immovable = true;
         ledge = platforms.create(100, 150, 'ground');
         ledge.body.immovable = true;
+        ledge = platforms.create(50, 75, 'ground');
+        ledge.body.immovable = true;
     }
     
     function update() {
