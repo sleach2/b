@@ -15,11 +15,12 @@ window.onload = function() {
     var player;
     var move;
     var box;
-
+    var rnd = Math.random();
+    
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0,0,'sky');
-        box = game.add.sprite(100,100,'box');
+        box = game.add.sprite(rnd,rnd,'box');
         platforms = game.add.group(); 
         platforms.enableBody = true; 
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
