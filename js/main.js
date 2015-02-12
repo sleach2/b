@@ -26,7 +26,6 @@ window.onload = function() {
         box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
         game.physics.enable(box, Phaser.Physics.ARCADE);
         box.body.gravity.y=300;
-        box.body.immovable=true;
         platforms = game.add.group(); 
         platforms.enableBody = true; 
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
@@ -73,6 +72,7 @@ window.onload = function() {
         } 
         if(game.physics.arcade.collide(player,box)){
             game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+            box.body.velocity.x=0;
         }
     }
 };
