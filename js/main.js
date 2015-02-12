@@ -71,7 +71,7 @@ window.onload = function() {
             player.body.velocity.y = -350; 
         } 
         if(game.physics.arcade.collide(player,box)){
-            game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+            game.add.text(160, 150, 'You Win!', { fontSize: '64px', fill: '#000' });
             box.body.velocity.x=0;
         }
     }
