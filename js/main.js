@@ -21,6 +21,7 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0,0,'sky');
         box = game.add.sprite(rnd*game.world.width,rnd*game.world.height,'box');
+        game.physics.enable(box, Phaser.Physics.ARCADE);
         platforms = game.add.group(); 
         platforms.enableBody = true; 
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
