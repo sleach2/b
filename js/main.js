@@ -19,7 +19,7 @@ window.onload = function() {
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0,0,'sky');
-        box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height),'box');
+        box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
         game.physics.enable(box, Phaser.Physics.ARCADE);
         box.body.gravity.y=300;
         platforms = game.add.group(); 
