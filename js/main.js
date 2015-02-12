@@ -9,6 +9,7 @@ window.onload = function() {
         game.load.image('ground', 'assets/platform.png');
         game.load.image('sky', 'assets/sky.png');
         game.load.image('box', 'assets/box.png');
+        game.load.image('dude', 'assets/dude.png');
     }
     
     var platforms;
@@ -16,6 +17,7 @@ window.onload = function() {
     var move;
     var box;
     var bkd;
+    var dude;
 
     function create() {
         //game.world.setBounds(-1000,-1000,2000,2000);
@@ -51,9 +53,11 @@ window.onload = function() {
         ledge.body.immovable = true;
         ledge = platforms.create(700, 50, 'ground');
         ledge.body.immovable = true;
+        dude=game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'dude');
     }
     
     function update() {
+        balls.forEach(game.physics.arcade.moveToPlayer, game.physics.arcade, false, 200);
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(box, platforms);
         player.body.velocity.x = 0;
