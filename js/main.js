@@ -20,10 +20,7 @@ window.onload = function() {
     var dude;
 
     function create() {
-        //game.world.setBounds(-1000,-1000,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        //bkd = game.add.tileSprite(0,0,800,600,'sky');
-        //bkd.fixedToCamera=true;
         game.add.sprite(0,0,'sky');
         box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
         game.physics.enable(box, Phaser.Physics.ARCADE);
@@ -41,7 +38,6 @@ window.onload = function() {
         player.animations.add('left',[0,1],10,true);
         player.animations.add('right',[3,4],10,true);
         move = game.input.keyboard.createCursorKeys();
-        //player.body.setSize(20, 32, 5, 16);
         game.camera.follow(player);
         var ledge = platforms.create(400, 400, 'ground');
         ledge.body.immovable = true;
@@ -53,11 +49,9 @@ window.onload = function() {
         ledge.body.immovable = true;
         ledge = platforms.create(700, 50, 'ground');
         ledge.body.immovable = true;
-        dude=game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'dude');
     }
     
     function update() {
-        balls.forEach(game.physics.arcade.moveToPlayer, game.physics.arcade, false, 200);
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(box, platforms);
         player.body.velocity.x = 0;
