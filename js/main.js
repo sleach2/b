@@ -8,15 +8,18 @@ window.onload = function() {
         game.load.spritesheet('cat1','assets/cat1.png', 74, 50);
         game.load.image('ground', 'assets/platform.png');
         game.load.image('sky', 'assets/sky.png');
+        game.load.image('box', 'assets/box.png');
     }
     
     var platforms;
     var player;
     var move;
+    var rnd=Math.random();
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0,0,'sky');
+        gamme.add.sprite(rnd,rnd,'box');
         platforms = game.add.group(); 
         platforms.enableBody = true; 
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
