@@ -5,7 +5,7 @@ window.onload = function() {
 
     function preload() {
         game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet('cat1','assets/cat1.png', 65, 50);
+        game.load.spritesheet('cat1','assets/cat1.png', 60, 50);
         game.load.image('ground', 'assets/platform.png');
         game.load.image('sky', 'assets/sky.png');
     }
