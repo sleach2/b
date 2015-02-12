@@ -18,10 +18,10 @@ window.onload = function() {
     var bkd;
 
     function create() {
-        game.world.setBounds(-1000,-1000,2000,2000);
+        //game.world.setBounds(-1000,-1000,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        bkd = game.add.tileSprite(0,0,800,600,'sky');
-        bkd.fixedToCamera=true;
+        //bkd = game.add.tileSprite(0,0,800,600,'sky');
+        //bkd.fixedToCamera=true;
         box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
         game.physics.enable(box, Phaser.Physics.ARCADE);
         box.body.gravity.y=300;
