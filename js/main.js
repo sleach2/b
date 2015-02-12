@@ -5,7 +5,7 @@ window.onload = function() {
 
     function preload() {
         game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.spritesheet('cat','assets/cat1.png', 100, 100);
+        game.load.spritesheet('cat','assets/cat1.png', 50, 100);
         game.load.image('ground', 'assets/platform.png');
         game.load.image('sky', 'assets/sky.png');
     }
@@ -15,6 +15,7 @@ window.onload = function() {
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.add.sprite(0,0,'sky');
         platforms = game.add.group(); 
         platforms.enableBody = true; 
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
