@@ -22,6 +22,7 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //bkd = game.add.tileSprite(0,0,800,600,'sky');
         //bkd.fixedToCamera=true;
+        game.add.sprite(0,0,'sky');
         box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
         game.physics.enable(box, Phaser.Physics.ARCADE);
         box.body.gravity.y=300;
