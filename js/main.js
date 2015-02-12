@@ -24,11 +24,13 @@ window.onload = function() {
         player = game.add.sprite(32, game.world.height - 150, 'cat');
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.2;
+        player.body.gravity.y = 300;
         player.body.collideWorldBounds = true;
-        player.body.setSize(20, 32, 5, 16);
+        //player.body.setSize(20, 32, 5, 16);
     }
     
     function update() {
         game.physics.arcade.collide(player, platforms);
+        player.body.velocity.x = 0;
     }
 };
