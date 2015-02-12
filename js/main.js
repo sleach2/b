@@ -15,11 +15,13 @@ window.onload = function() {
     var player;
     var move;
     var box;
+    var backbround;
 
     function create() {
         game.world.setBounds(-1000,-1000,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.add.sprite(0,0,'sky');
+        background = game.add.tilesprite(0,0,800,600,'sky');
+        background.fixedToCamera=true;
         box = game.add.sprite(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'box');
         game.physics.enable(box, Phaser.Physics.ARCADE);
         box.body.gravity.y=300;
