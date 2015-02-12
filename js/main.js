@@ -41,6 +41,8 @@ window.onload = function() {
         move = game.input.keyboard.createCursorKeys();
         //player.body.setSize(20, 32, 5, 16);
         game.camera.follow(player);
+        var ledge = platforms.create(400, 400, 'ground');
+        ledge.body.immovable = true;
     }
     
     function update() {
