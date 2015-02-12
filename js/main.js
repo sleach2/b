@@ -12,6 +12,7 @@ window.onload = function() {
     
     var platforms;
     var player;
+    var move;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -26,11 +27,28 @@ window.onload = function() {
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 300;
         player.body.collideWorldBounds = true;
+        player.animations.add('left',[3,4],10,true);
+        player.animations.add('right',[1,2],10,true);
+        move = game.input.keyboard.createCursorKeys();
         //player.body.setSize(20, 32, 5, 16);
     }
     
     function update() {
         game.physics.arcade.collide(player, platforms);
         player.body.velocity.x = 0;
+        if (cursors.left.isDown){ 
+             player.body.velocity.x = -250; 
+             player.animations.play('left'); 
+        }else if (cursors.right.isDown){ 
+             player.body.velocity.x = 250; 
+             player.animations.play('right'); 
+         }else{ 
+             player.animations.stop(); 
+             player.frame = 0; 
+         } 
+         if (cursors.up.isDown && player.body.touching.down){ 
+            player.body.velocity.y = -350; 
+        } 
+
     }
 };
