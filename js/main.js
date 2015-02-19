@@ -79,7 +79,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload:
 function preload() {
 
     game.load.image('sky','assets/sky.png');
-    game.load.image('dude','assets/dude.png');
+    game.load.image('dude2','assets/dude2.png');
 
 }
 
@@ -94,7 +94,7 @@ function create() {
 
     game.physics.startSystem(Phaser.Physics.P2JS);
 
-    player = game.add.sprite(game.world.centerX, game.world.centerY, 'dude');
+    player = game.add.sprite(game.world.centerX, game.world.centerY, 'dude2');
 
     game.physics.p2.enable(player);
 
